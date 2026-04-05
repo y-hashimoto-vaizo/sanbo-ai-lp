@@ -1,0 +1,803 @@
+<!--
+aesthetic_dna: Modern Premium B2B SaaS Consulting. High contrast, trust-inspiring, highly structural.
+ui_paradigm: Staggered Narrative Landing Page. Focuses on sequential persuasion (Problem -> Cause -> Solution -> Proof -> Pricing).
+palette: Primary Navy (#0f3460), Accent Orange (#e67e22), Crisp Whites, and Cool Grays.
+-->
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANBO AI | 経営者のためのAI参謀 - 株式会社VAIZO</title>
+    <meta name="description" content="経営者がAIに悩む時代は、終わりにしましょう。M&A累計850億円の経験を持つ経営者が監修する、中小企業のためのAI導入・活用伴走サービス。">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config & Custom Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#06162a',
+                            800: '#0a2342',
+                            700: '#0f3460', // Primary Brand Color
+                            600: '#154885',
+                        },
+                        brandOrange: {
+                            DEFAULT: '#e67e22',
+                            hover: '#cf6d16',
+                            light: '#fdf2e9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        heading: ['"Zen Kaku Gothic New"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(21, 72, 133, 0.4) 0%, rgba(10, 35, 66, 0) 50%)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Utilities & Animations */
+        body { font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; }
+        .font-heading { font-family: 'Zen Kaku Gothic New', sans-serif; }
+        
+        .glass-dark { background: rgba(15, 52, 96, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glass-light { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.5); }
+        
+        .fade-up-element { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up-element.is-visible { opacity: 1; transform: translateY(0); }
+        
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        .blob-bg {
+            position: absolute;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.5;
+            animation: float 10s infinite ease-in-out alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0px, 0px) scale(1); }
+            100% { transform: translate(30px, 20px) scale(1.1); }
+        }
+
+        .accordion-content { transition: max-height 0.3s ease-out, padding 0.3s ease; max-height: 0; overflow: hidden; }
+        .accordion-item.active .accordion-content { max-height: 500px; padding-bottom: 1.5rem; }
+        .accordion-item .ph-caret-down { transition: transform 0.3s ease; }
+        .accordion-item.active .ph-caret-down { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased relative">
+
+    <!-- Global Nav -->
+    <header id="global-nav" class="fixed w-full top-0 z-50 transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded bg-brandOrange flex items-center justify-center font-heading font-bold text-white tracking-widest text-lg shadow-lg">S</div>
+                <div class="font-heading font-bold text-xl text-white tracking-wider" id="nav-logo-text">SANBO AI</div>
+            </div>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#features" class="text-sm text-gray-200 hover:text-white transition-colors font-medium">選ばれる理由</a>
+                <a href="#pricing" class="text-sm text-gray-200 hover:text-white transition-colors font-medium">料金プラン</a>
+                <a href="#contact" class="bg-brandOrange hover:bg-brandOrange-hover text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0_0_15px_rgba(230,126,34,0.4)] hover:shadow-[0_0_20px_rgba(230,126,34,0.6)]">無料で相談する</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative min-h-[90vh] bg-navy-900 flex items-center pt-24 pb-16 overflow-hidden isolate">
+        <!-- Abstract AI Background Elements -->
+        <div class="blob-bg w-[500px] h-[500px] bg-navy-600 rounded-full top-[-100px] right-[-100px]"></div>
+        <div class="blob-bg w-[400px] h-[400px] bg-[#1a365d] rounded-full bottom-[-50px] left-[-100px]" style="animation-delay: -5s;"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 mix-blend-overlay"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-navy-900 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center">
+            
+            <div class="inline-block border border-white/20 bg-white/5 backdrop-blur-md rounded-full px-4 py-1.5 text-xs text-brandOrange font-bold tracking-widest mb-6 fade-up-element">
+                AI MANAGEMENT ADVISOR
+            </div>
+            
+            <h1 class="font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.2] mb-6 drop-shadow-2xl fade-up-element delay-100">
+                <span class="block">経営者がAIに悩む時代は、</span>
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">終わりにしましょう。</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-300 font-medium max-w-3xl leading-relaxed mb-10 fade-up-element delay-200">
+                技術のことは参謀に。あなたは経営に集中してください。<br class="hidden md:block">
+                AI専門家が御社の"参謀"として、情報提供から導入・活用・成果創出まで伴走します。
+            </p>
+
+            <!-- Trust Badges -->
+            <ul class="flex flex-wrap justify-center gap-4 md:gap-8 mb-10 fade-up-element delay-300">
+                <li class="flex items-center gap-2 text-white font-medium bg-white/10 px-4 py-2 rounded-full border border-white/10">
+                    <i class="ph-fill ph-check-circle text-brandOrange text-xl"></i> 初期費用0円
+                </li>
+                <li class="flex items-center gap-2 text-white font-medium bg-white/10 px-4 py-2 rounded-full border border-white/10">
+                    <i class="ph-fill ph-check-circle text-brandOrange text-xl"></i> 初月無料から開始
+                </li>
+                <li class="flex items-center gap-2 text-white font-medium bg-white/10 px-4 py-2 rounded-full border border-white/10">
+                    <i class="ph-fill ph-check-circle text-brandOrange text-xl"></i> 業界問わず導入実績
+                </li>
+            </ul>
+
+            <!-- Hero CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4 fade-up-element delay-300">
+                <a href="#contact" class="group relative flex items-center justify-center gap-3 bg-brandOrange hover:bg-brandOrange-hover text-white text-lg font-bold py-4 px-10 rounded-full overflow-hidden transition-all duration-300 shadow-[0_10px_30px_rgba(230,126,34,0.4)]">
+                    <span class="relative z-10">無料で相談する（オンライン30分）</span>
+                    <i class="ph-bold ph-arrow-right text-xl relative z-10 group-hover:translate-x-1 transition-transform"></i>
+                    <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                </a>
+                <a href="#pricing" class="flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 border-2 border-white text-white text-lg font-bold py-4 px-8 rounded-full transition-colors">
+                    料金プランを見る
+                </a>
+            </div>
+        </div>
+
+        <!-- Social Proof Bar (Meso-Architecture inside Macro) -->
+        <div class="absolute bottom-0 left-0 w-full glass-dark border-b-0 border-x-0 border-t border-white/10 py-4 z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-wrap justify-between items-center text-xs md:text-sm font-medium text-gray-300 gap-4 opacity-80">
+                    <div class="flex items-center gap-2"><i class="ph ph-trend-up text-lg"></i> M&A実績累計850億円の知見</div>
+                    <div class="hidden md:block w-px h-4 bg-white/20"></div>
+                    <div class="flex items-center gap-2"><i class="ph ph-buildings text-lg"></i> AI導入支援 複数社実績</div>
+                    <div class="hidden md:block w-px h-4 bg-white/20"></div>
+                    <div class="flex items-center gap-2"><i class="ph ph-hand-coins text-lg"></i> 補助金採択支援多数</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. PROBLEM SECTION -->
+    <section class="py-24 bg-gray-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up-element">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-navy-800 mb-4 tracking-tight">こんなお悩み、ありませんか？</h2>
+                <div class="w-16 h-1 bg-brandOrange mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all fade-up-element">
+                    <div class="w-12 h-12 bg-gray-100 text-gray-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ph ph-question text-2xl"></i>
+                    </div>
+                    <p class="font-bold text-gray-800 leading-relaxed text-lg">「AIが話題だけど、うちの会社にどう関係あるのかわからない」</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all fade-up-element delay-100">
+                    <div class="w-12 h-12 bg-gray-100 text-gray-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ph ph-map-pin-line text-2xl"></i>
+                    </div>
+                    <p class="font-bold text-gray-800 leading-relaxed text-lg">「導入を決めたが、社内に詳しい人がいない。何から始めれば？」</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all fade-up-element delay-200">
+                    <div class="w-12 h-12 bg-gray-100 text-gray-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ph ph-currency-jpy text-2xl"></i>
+                    </div>
+                    <p class="font-bold text-gray-800 leading-relaxed text-lg">「AI人材を雇いたいが年収700万〜。コストが全く合わない」</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:-translate-y-1 hover:shadow-md transition-all fade-up-element delay-300">
+                    <div class="w-12 h-12 bg-gray-100 text-gray-500 rounded-xl flex items-center justify-center mb-6">
+                        <i class="ph ph-ghost text-2xl"></i>
+                    </div>
+                    <p class="font-bold text-gray-800 leading-relaxed text-lg">「ChatGPTを入れたが誰も使いこなせず、月額だけ払っている」</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CAUSE → SOLUTION (Visual Tension) -->
+    <section class="py-24 bg-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up-element">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-navy-800 mb-4 tracking-tight">なぜ、AI導入は失敗するのか？</h2>
+                <p class="text-gray-500">それは、「技術」だけを導入しようとするからです。</p>
+            </div>
+
+            <!-- Failure Pattern (Red) -->
+            <div class="bg-[#fff5f5] border border-red-200 rounded-3xl p-8 md:p-12 mb-8 relative fade-up-element shadow-sm">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-red-100 text-red-600 font-bold px-6 py-2 rounded-full border border-red-200 text-sm tracking-widest shadow-sm">よくある失敗パターン</div>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                    <li class="flex items-start gap-4">
+                        <div class="mt-1 bg-red-100 p-1 rounded text-red-500"><i class="ph-bold ph-x"></i></div>
+                        <span class="text-gray-700 font-medium">ツールだけ入れて、具体的な<strong class="text-red-600">使い方を教える人</strong>がいない</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="mt-1 bg-red-100 p-1 rounded text-red-500"><i class="ph-bold ph-x"></i></div>
+                        <span class="text-gray-700 font-medium">IT部門に丸投げして、<strong class="text-red-600">経営課題</strong>と紐づいていない</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="mt-1 bg-red-100 p-1 rounded text-red-500"><i class="ph-bold ph-x"></i></div>
+                        <span class="text-gray-700 font-medium">「とりあえずChatGPT」で、自社に<strong class="text-red-600">最適なAI</strong>を選べていない</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="mt-1 bg-red-100 p-1 rounded text-red-500"><i class="ph-bold ph-x"></i></div>
+                        <span class="text-gray-700 font-medium">導入後のフォローがなく、<strong class="text-red-600">1ヶ月で使われなくなる</strong></span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Arrow Down -->
+            <div class="flex justify-center my-[-10px] relative z-10 fade-up-element">
+                <div class="w-16 h-16 bg-navy-800 rounded-full flex items-center justify-center border-4 border-white shadow-lg animate-bounce">
+                    <i class="ph-bold ph-arrow-down text-white text-2xl"></i>
+                </div>
+            </div>
+
+            <!-- Solution Pattern (Green/Navy) -->
+            <div class="bg-navy-800 rounded-3xl p-8 md:p-12 mt-8 relative fade-up-element shadow-2xl overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-navy-600 rounded-full opacity-50 blur-3xl"></div>
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brandOrange text-white font-bold px-8 py-2 rounded-full border-4 border-white text-sm md:text-base tracking-widest shadow-md whitespace-nowrap">SANBO AIのアプローチ</div>
+                
+                <h3 class="text-center text-white font-heading font-bold text-2xl mb-8 mt-6">技術ではなく「経営の成果」に直結させる</h3>
+                
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                    <li class="flex items-start gap-4 group">
+                        <div class="mt-1 bg-white/10 p-2 rounded-full text-brandOrange group-hover:bg-brandOrange group-hover:text-white transition-colors"><i class="ph-bold ph-check text-xl"></i></div>
+                        <span class="text-gray-100 leading-relaxed font-medium">経営者・部長に直接、<br class="hidden md:block">AI活用の判断材料を提供する</span>
+                    </li>
+                    <li class="flex items-start gap-4 group">
+                        <div class="mt-1 bg-white/10 p-2 rounded-full text-brandOrange group-hover:bg-brandOrange group-hover:text-white transition-colors"><i class="ph-bold ph-check text-xl"></i></div>
+                        <span class="text-gray-100 leading-relaxed font-medium">御社の業務フローを分析し、<br class="hidden md:block">合ったAIツールを選定・セットアップ</span>
+                    </li>
+                    <li class="flex items-start gap-4 group">
+                        <div class="mt-1 bg-white/10 p-2 rounded-full text-brandOrange group-hover:bg-brandOrange group-hover:text-white transition-colors"><i class="ph-bold ph-check text-xl"></i></div>
+                        <span class="text-gray-100 leading-relaxed font-medium">毎月の定例と改善提案で<br class="hidden md:block">「導入して終わり」にしない</span>
+                    </li>
+                    <li class="flex items-start gap-4 group">
+                        <div class="mt-1 bg-white/10 p-2 rounded-full text-brandOrange group-hover:bg-brandOrange group-hover:text-white transition-colors"><i class="ph-bold ph-check text-xl"></i></div>
+                        <span class="text-gray-100 leading-relaxed font-medium">技術の話はすべて参謀が引き受け、<br class="hidden md:block">経営に集中できる環境をつくる</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. WHY SANBO AI (Asymmetrical Layouts) -->
+    <section id="features" class="py-24 bg-gray-50 border-t border-gray-200 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 fade-up-element">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-navy-800 mb-4 tracking-tight">SANBO AI が選ばれる３つの理由</h2>
+                <div class="w-16 h-1 bg-brandOrange mx-auto rounded"></div>
+            </div>
+
+            <!-- Reason 01 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-24 relative fade-up-element">
+                <div class="absolute -left-10 md:-left-20 top-0 text-[150px] md:text-[200px] font-heading font-black text-gray-200 leading-none select-none z-0">01</div>
+                <div class="w-full md:w-1/2 relative z-10 pl-4 md:pl-12">
+                    <h3 class="font-heading font-bold text-2xl md:text-3xl text-navy-800 mb-4 leading-tight">技術者ではなく、<br><span class="text-brandOrange">経営者目線</span>で話せる</h3>
+                    <p class="text-gray-600 leading-loose text-lg">代表の橋本はM&A累計850億円の経営経験を持つCEOです。専門用語を並べるシステム屋ではなく、売上向上やコスト削減といった「経営者の言葉」でAIの価値と具体的なインパクトをお伝えします。</p>
+                </div>
+                <div class="w-full md:w-1/2 relative z-10">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl relative aspect-[4/3] bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="経営者同士のミーティング" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 border border-black/10 rounded-2xl"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reason 02 -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-24 relative fade-up-element">
+                <div class="absolute -right-10 md:right-0 top-0 text-[150px] md:text-[200px] font-heading font-black text-gray-200 leading-none select-none z-0 text-right w-full">02</div>
+                <div class="w-full md:w-1/2 relative z-10 pr-4 md:pr-12">
+                    <h3 class="font-heading font-bold text-2xl md:text-3xl text-navy-800 mb-4 leading-tight">ツールを入れて<br><span class="text-brandOrange">「終わり」にしない</span></h3>
+                    <p class="text-gray-600 leading-loose text-lg">AIツールのライセンスを売って終わりではありません。月次の活用レポートと改善提案ミーティングを実施し、AIが実際に現場で使われ、経営数値に効いているかを一緒に検証・改善し続けます。</p>
+                </div>
+                <div class="w-full md:w-1/2 relative z-10">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl relative aspect-[4/3] bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="データとグラフの分析" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 border border-black/10 rounded-2xl"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reason 03 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 relative fade-up-element">
+                <div class="absolute -left-10 md:-left-20 top-0 text-[150px] md:text-[200px] font-heading font-black text-gray-200 leading-none select-none z-0">03</div>
+                <div class="w-full md:w-1/2 relative z-10 pl-4 md:pl-12">
+                    <h3 class="font-heading font-bold text-2xl md:text-3xl text-navy-800 mb-4 leading-tight"><span class="text-brandOrange">リスクゼロ</span>で始められる<br>中小企業のための価格設計</h3>
+                    <p class="text-gray-600 leading-loose text-lg">高額な初期費用はいただきません。「初期費用0円・初月無料（または半額）」でスタート可能。合わなければいつでも解約できる、本気で中小企業に寄り添ったサブスクリプションモデルです。</p>
+                </div>
+                <div class="w-full md:w-1/2 relative z-10">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl relative aspect-[4/3] bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="握手と契約" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 border border-black/10 rounded-2xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PERSONA STORIES (Deep Navy Vibe) -->
+    <section class="py-24 bg-navy-900 border-t border-navy-700 text-white relative isolate">
+        <!-- Decoration -->
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-20 z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 fade-up-element">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4 tracking-tight">導入事例・シミュレーション</h2>
+                <div class="w-16 h-1 bg-brandOrange mx-auto rounded mb-6"></div>
+                <p class="text-gray-400">会社の規模やフェーズに合わせた活用ストーリー</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Persona A -->
+                <div class="bg-navy-800 border border-white/10 rounded-2xl p-8 flex flex-col fade-up-element">
+                    <div class="flex items-center gap-4 mb-6 pb-6 border-b border-white/10">
+                        <div class="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center border-2 border-brandOrange/50">
+                            <i class="ph-fill ph-factory text-2xl text-gray-300"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">A社長 <span class="text-sm font-normal text-gray-400">/ 製造業</span></h3>
+                            <p class="text-sm text-gray-400">従業員 12名</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6 flex-grow">
+                        <div class="bg-navy-900/50 rounded-lg p-4 mb-4 relative">
+                            <div class="absolute top-0 right-0 bg-red-500/20 text-red-300 text-xs px-2 py-1 rounded-bl-lg font-bold">BEFORE</div>
+                            <p class="text-sm text-gray-300">AIニュースを見て焦るが、自社の現場にどう関係するのか全くイメージが湧かない。</p>
+                        </div>
+                        <div class="flex justify-center my-2 text-brandOrange animate-bounce"><i class="ph-bold ph-arrow-down"></i></div>
+                        <div class="bg-brandOrange/10 border border-brandOrange/20 rounded-lg p-4 relative">
+                            <div class="absolute top-0 right-0 bg-brandOrange text-white text-xs px-2 py-1 rounded-bl-lg font-bold">AFTER</div>
+                            <p class="text-sm text-white font-medium">月1回のMTGで業界固有のAI活用事例を知り、事務作業の効率化策が明確になった。</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/10 text-center">
+                        <span class="inline-block bg-white/10 text-white text-xs px-3 py-1.5 rounded-full mb-2">利用プラン例</span>
+                        <div class="font-heading font-bold text-xl text-brandOrange tracking-wide">ENTRY <span class="text-sm text-gray-400 font-sans">プラン</span></div>
+                    </div>
+                </div>
+
+                <!-- Persona B -->
+                <div class="bg-navy-800 border border-brandOrange/30 rounded-2xl p-8 flex flex-col relative shadow-[0_0_30px_rgba(230,126,34,0.1)] fade-up-element delay-100 transform lg:-translate-y-4">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brandOrange text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-widest shadow-lg">一番多いご相談</div>
+                    
+                    <div class="flex items-center gap-4 mb-6 pb-6 border-b border-white/10 mt-2">
+                        <div class="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center border-2 border-brandOrange/50">
+                            <i class="ph-fill ph-hard-hat text-2xl text-gray-300"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">B部長 <span class="text-sm font-normal text-gray-400">/ 建設業</span></h3>
+                            <p class="text-sm text-gray-400">従業員 38名</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6 flex-grow">
+                        <div class="bg-navy-900/50 rounded-lg p-4 mb-4 relative">
+                            <div class="absolute top-0 right-0 bg-red-500/20 text-red-300 text-xs px-2 py-1 rounded-bl-lg font-bold">BEFORE</div>
+                            <p class="text-sm text-gray-300">社長から「AIを入れろ」と指示されたが、IT部門がなく、何を買えばいいか選定できない。</p>
+                        </div>
+                        <div class="flex justify-center my-2 text-brandOrange animate-bounce"><i class="ph-bold ph-arrow-down"></i></div>
+                        <div class="bg-brandOrange/10 border border-brandOrange/20 rounded-lg p-4 relative">
+                            <div class="absolute top-0 right-0 bg-brandOrange text-white text-xs px-2 py-1 rounded-bl-lg font-bold">AFTER</div>
+                            <p class="text-sm text-white font-medium">最適なツール選定から初期設定まで任せ、初月で導入完了。月次レポートで社長に報告できている。</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/10 text-center">
+                        <span class="inline-block bg-white/10 text-white text-xs px-3 py-1.5 rounded-full mb-2">利用プラン例</span>
+                        <div class="font-heading font-bold text-xl text-brandOrange tracking-wide">STANDARD <span class="text-sm text-gray-400 font-sans">プラン</span></div>
+                    </div>
+                </div>
+
+                <!-- Persona C -->
+                <div class="bg-navy-800 border border-white/10 rounded-2xl p-8 flex flex-col fade-up-element delay-200">
+                    <div class="flex items-center gap-4 mb-6 pb-6 border-b border-white/10">
+                        <div class="w-14 h-14 bg-gray-700 rounded-full flex items-center justify-center border-2 border-brandOrange/50">
+                            <i class="ph-fill ph-briefcase text-2xl text-gray-300"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">C社長 <span class="text-sm font-normal text-gray-400">/ 専門サービス業</span></h3>
+                            <p class="text-sm text-gray-400">従業員 65名</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6 flex-grow">
+                        <div class="bg-navy-900/50 rounded-lg p-4 mb-4 relative">
+                            <div class="absolute top-0 right-0 bg-red-500/20 text-red-300 text-xs px-2 py-1 rounded-bl-lg font-bold">BEFORE</div>
+                            <p class="text-sm text-gray-300">専門のAI人材を雇おうとしたが年収700万以上要求され、リスクが高く採用を断念。</p>
+                        </div>
+                        <div class="flex justify-center my-2 text-brandOrange animate-bounce"><i class="ph-bold ph-arrow-down"></i></div>
+                        <div class="bg-brandOrange/10 border border-brandOrange/20 rounded-lg p-4 relative">
+                            <div class="absolute top-0 right-0 bg-brandOrange text-white text-xs px-2 py-1 rounded-bl-lg font-bold">AFTER</div>
+                            <p class="text-sm text-white font-medium">自社専用のセキュアなAI環境を構築構築してもらい、月額数十万で「AI部門」を安価に外注できた。</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-white/10 text-center">
+                        <span class="inline-block bg-white/10 text-white text-xs px-3 py-1.5 rounded-full mb-2">利用プラン例</span>
+                        <div class="font-heading font-bold text-xl text-brandOrange tracking-wide">PREMIUM <span class="text-sm text-gray-400 font-sans">プラン</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FLOW -->
+    <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up-element">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-navy-800 mb-4 tracking-tight">導入までの流れ</h2>
+                <div class="w-16 h-1 bg-brandOrange mx-auto rounded"></div>
+            </div>
+
+            <div class="relative">
+                <!-- Desktop Line -->
+                <div class="hidden md:block absolute top-[45px] left-0 w-full h-1 bg-gray-200 z-0"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="flex flex-row md:flex-col items-center md:items-start gap-6 md:gap-4 fade-up-element">
+                        <div class="w-16 h-16 shrink-0 bg-navy-800 text-white rounded-full flex items-center justify-center font-heading font-bold text-xl border-4 border-white shadow-md mx-auto relative z-10">
+                            1
+                        </div>
+                        <div class="flex-grow md:text-center mt-2">
+                            <h4 class="font-bold text-lg text-navy-800 mb-2">無料相談</h4>
+                            <p class="text-sm text-gray-600">オンラインで30分、現状の課題感や「AIで何ができるか」をフランクにお話しします。</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-row md:flex-col items-center md:items-start gap-6 md:gap-4 fade-up-element delay-100">
+                        <div class="w-16 h-16 shrink-0 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center font-heading font-bold text-xl border-4 border-white shadow-md mx-auto relative z-10">
+                            2
+                        </div>
+                        <div class="flex-grow md:text-center mt-2">
+                            <h4 class="font-bold text-lg text-navy-800 mb-2">プラン提案</h4>
+                            <p class="text-sm text-gray-600">ヒアリング内容をもとに、御社に最適なプランと具体的なロードマップをご提案します。</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-row md:flex-col items-center md:items-start gap-6 md:gap-4 fade-up-element delay-200">
+                        <div class="w-16 h-16 shrink-0 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center font-heading font-bold text-xl border-4 border-white shadow-md mx-auto relative z-10">
+                            3
+                        </div>
+                        <div class="flex-grow md:text-center mt-2">
+                            <h4 class="font-bold text-lg text-navy-800 mb-2">お試し開始</h4>
+                            <p class="text-sm text-gray-600">初月無料または半額でスタート。合わなければこの時点で終了可能です（リスクゼロ）。</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="flex flex-row md:flex-col items-center md:items-start gap-6 md:gap-4 fade-up-element delay-300">
+                        <div class="w-16 h-16 shrink-0 bg-brandOrange text-white rounded-full flex items-center justify-center font-heading font-bold text-xl border-4 border-white shadow-lg mx-auto relative z-10 shadow-[0_0_15px_rgba(230,126,34,0.4)]">
+                            <i class="ph-bold ph-rocket-launch"></i>
+                        </div>
+                        <div class="flex-grow md:text-center mt-2">
+                            <h4 class="font-bold text-lg text-brandOrange mb-2">本格運用・成果創出</h4>
+                            <p class="text-sm text-gray-600">月次で伴走しながら、業務効率化やコスト削減といった「経営の成果」を出していきます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. PRICING (Meso-Architecture: Data Density) -->
+    <section id="pricing" class="py-24 bg-navy-50/30 border-y border-gray-200 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up-element">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-navy-800 mb-4 tracking-tight">料金プラン</h2>
+                <p class="text-gray-500">企業のフェーズに合わせた3つのプラン。高額な初期費用は一切ありません。</p>
+            </div>
+
+            <div class="flex flex-col xl:flex-row gap-8 items-center xl:items-stretch justify-center">
+                
+                <!-- ENTRY -->
+                <div class="w-full max-w-md xl:w-1/3 bg-white rounded-2xl border border-gray-200 p-8 shadow-sm flex flex-col fade-up-element">
+                    <div class="mb-4">
+                        <div class="inline-block bg-navy-100 text-navy-700 text-xs font-bold px-3 py-1 rounded-full mb-4">情報収集フェーズ</div>
+                        <h3 class="font-heading font-bold text-2xl text-navy-800">ENTRY <span class="text-sm font-normal text-gray-500 inline-block ml-2">AI経営顧問</span></h3>
+                    </div>
+                    <div class="mb-6 pb-6 border-b border-gray-100">
+                        <div class="flex items-end gap-1 mb-2">
+                            <span class="text-4xl font-heading font-bold text-gray-900">5</span>
+                            <span class="text-lg font-bold text-gray-900">万円〜</span>
+                            <span class="text-sm text-gray-500 mb-1">/ 月</span>
+                        </div>
+                        <p class="text-brandOrange font-bold text-sm bg-brandOrange-light inline-block px-2 py-1 rounded">初月無料・いつでも解約可</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-check text-green-500 mt-1"></i><span class="text-sm text-gray-600">AI最新情報レポート（月1回）</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-check text-green-500 mt-1"></i><span class="text-sm text-gray-600">自社向け活用アイデア提案</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-check text-green-500 mt-1"></i><span class="text-sm text-gray-600">定例ミーティング（月1回/オンライン）</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-check text-green-500 mt-1"></i><span class="text-sm text-gray-600">チャット相談（月5件まで）</span></li>
+                    </ul>
+                    
+                    <a href="#contact" class="block w-full text-center py-3 px-4 bg-gray-50 hover:bg-gray-100 text-navy-800 border border-gray-200 font-bold rounded-lg transition-colors mt-auto">無料で相談してみる</a>
+                </div>
+
+                <!-- STANDARD (RECOMMENDED) -->
+                <div class="w-full max-w-md xl:w-1/3 bg-white rounded-2xl border-2 border-brandOrange p-8 shadow-xl relative transform xl:scale-105 z-10 flex flex-col fade-up-element delay-100">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brandOrange text-white text-sm font-bold px-6 py-1.5 rounded-full tracking-widest shadow-md">一番人気</div>
+                    
+                    <div class="mb-4 mt-2">
+                        <div class="inline-block bg-brandOrange-light text-brandOrange text-xs font-bold px-3 py-1 rounded-full mb-4">導入・定着フェーズ</div>
+                        <h3 class="font-heading font-bold text-2xl text-navy-800">STANDARD <span class="text-sm font-normal text-gray-500 inline-block ml-2">AI導入・活用伴走</span></h3>
+                    </div>
+                    <div class="mb-6 pb-6 border-b border-gray-100">
+                        <div class="flex items-end gap-1 mb-2">
+                            <span class="text-4xl font-heading font-bold text-gray-900">25</span>
+                            <span class="text-lg font-bold text-gray-900">万円〜</span>
+                            <span class="text-sm text-gray-500 mb-1">/ 月</span>
+                        </div>
+                        <p class="text-brandOrange font-bold text-sm bg-brandOrange-light inline-block px-2 py-1 rounded">初月半額・最低契約3ヶ月</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-check text-brandOrange mt-1"></i><span class="text-sm text-gray-800 font-bold">ENTRYの全内容を含む</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-plus text-brandOrange mt-1"></i><span class="text-sm text-gray-600">AIツール選定・導入セットアップ代行</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-plus text-brandOrange mt-1"></i><span class="text-sm text-gray-600">従業員向け操作研修の実施</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-plus text-brandOrange mt-1"></i><span class="text-sm text-gray-600">定例ミーティング（月2回）</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-plus text-brandOrange mt-1"></i><span class="text-sm text-gray-600">業務のAI化提案と実装サポート</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-plus text-brandOrange mt-1"></i><span class="text-sm text-gray-600">チャット相談（月10件まで）</span></li>
+                    </ul>
+                    
+                    <a href="#contact" class="block w-full text-center py-4 px-4 bg-brandOrange hover:bg-brandOrange-hover text-white shadow-[0_5px_15px_rgba(230,126,34,0.3)] font-bold rounded-lg transition-colors mt-auto">無料で一回相談する</a>
+                </div>
+
+                <!-- PREMIUM -->
+                <div class="w-full max-w-md xl:w-1/3 bg-gray-900 text-white rounded-2xl border border-gray-700 p-8 shadow-sm flex flex-col fade-up-element delay-200">
+                    <div class="mb-4">
+                        <div class="inline-block bg-gray-700 text-gray-200 text-xs font-bold px-3 py-1 rounded-full mb-4">完全内製化・高度利用</div>
+                        <h3 class="font-heading font-bold text-2xl text-white">PREMIUM <span class="text-sm font-normal text-gray-400 inline-block ml-2">AI部門アウトソーシング</span></h3>
+                    </div>
+                    <div class="mb-6 pb-6 border-b border-gray-700">
+                        <div class="flex items-end gap-1 mb-2">
+                            <span class="text-4xl font-heading font-bold text-white">50</span>
+                            <span class="text-lg font-bold text-white">万円〜</span>
+                            <span class="text-sm text-gray-400 mb-1">/ 月</span>
+                        </div>
+                        <p class="text-gray-300 font-bold text-sm bg-gray-800 inline-block px-2 py-1 rounded">初月半額・最低契約6ヶ月</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8 flex-grow">
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-check text-gray-400 mt-1"></i><span class="text-sm text-gray-300 font-bold">STANDARDの全内容を含む</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-plus text-gray-400 mt-1"></i><span class="text-sm text-gray-300">自社専用AI環境の構築・保守管理</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-plus text-gray-400 mt-1"></i><span class="text-sm text-gray-300">セキュリティ・ガバナンス設計</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-plus text-gray-400 mt-1"></i><span class="text-sm text-gray-300">自社データ連携・フローカスタマイズ</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-bold ph-plus text-gray-400 mt-1"></i><span class="text-sm text-gray-300">無制限チャット＆障害対応サポート</span></li>
+                    </ul>
+                    
+                    <a href="#contact" class="block w-full text-center py-3 px-4 bg-gray-800 hover:bg-gray-700 text-white border border-gray-600 font-bold rounded-lg transition-colors mt-auto">詳細を見積もる</a>
+                </div>
+
+            </div>
+            
+            <p class="text-center text-sm text-gray-500 mt-8">* 上記は目安となります。企業規模や要件によって個別にお見積もりいたします。</p>
+        </div>
+    </section>
+
+    <!-- 8. AUTHORITY / MESSAGE -->
+    <section class="py-24 bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-5/12 fade-up-element">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-navy-800 transform translate-x-4 translate-y-4 rounded-xl z-0"></div>
+                        <!-- Placeholder for professional CEO portrait -->
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="株式会社VAIZO 代表取締役CEO 橋本友太郎" class="relative z-10 w-full h-[500px] object-cover rounded-xl filter grayscale contrast-125 sepia-[.1]">
+                        <div class="absolute bottom-6 left-6 z-20 bg-white/90 backdrop-blur p-4 rounded-lg shadow-lg">
+                            <p class="text-xs text-gray-500 font-bold mb-1">株式会社VAIZO 代表取締役CEO</p>
+                            <p class="font-heading font-bold text-xl text-navy-800">橋本 友太郎</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full md:w-7/12 fade-up-element delay-100">
+                    <i class="ph-fill ph-quotes text-6xl text-gray-200 mb-6 block"></i>
+                    <h2 class="font-heading font-bold text-2xl md:text-3xl text-navy-900 mb-6 leading-relaxed">
+                        「AI導入の成否は、<br class="hidden md:block">技術力ではなく経営力で決まる」
+                    </h2>
+                    <div class="prose prose-lg text-gray-600 leading-loose">
+                        <p>これまでM&Aを通じて累計850億円規模の経営に関わってくる中で、多くの中小企業が抱える「属人化」「人手不足」「生産性の限界」を目の当たりにしてきました。</p>
+                        <p>AIは単なる便利ツールではなく、これらの構造的課題を根本から解決する「経営インフラ」です。しかし、多くのAIベンダーはシステムを売るだけで、経営にどう寄与するかを語りません。</p>
+                        <p>SANBO AIは開発会社ではありません。経営者の右腕となる「参謀」です。専門用語を捨て、売上と利益の視点からAI活用を徹底的に伴走します。まずは一度、御社の課題をお聞かせください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up-element">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-navy-800 mb-4 tracking-tight">よくあるご質問</h2>
+                <div class="w-16 h-1 bg-brandOrange mx-auto rounded"></div>
+            </div>
+
+            <!-- FAQ Accordion (Vanilla JS handles toggle logic via specific classes) -->
+            <div class="space-y-4 fade-up-element delay-100" id="faq-container">
+                
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                    <button class="w-full flex justify-between items-center text-left p-6 gap-4 hover:bg-gray-50 transition-colors focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="font-bold text-gray-800">Q. AIの知識が全くなくても大丈夫ですか？</span>
+                        <div class="bg-gray-100 p-1.5 rounded-full shrink-0"><i class="ph-bold ph-caret-down text-gray-600"></i></div>
+                    </button>
+                    <div class="accordion-content px-6 text-gray-600 leading-relaxed bg-white">
+                        はい、全く問題ありません。技術的な設定や難しい用語の解説はすべて私たちの「参謀」が引き受けます。経営者様には「自社のどの業務を楽にしたいか」だけをお話しいただければ結構です。
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                    <button class="w-full flex justify-between items-center text-left p-6 gap-4 hover:bg-gray-50 transition-colors focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="font-bold text-gray-800">Q. まだ導入を決めていませんが、話を聞くだけでもいいですか？</span>
+                        <div class="bg-gray-100 p-1.5 rounded-full shrink-0"><i class="ph-bold ph-caret-down text-gray-600"></i></div>
+                    </button>
+                    <div class="accordion-content px-6 text-gray-600 leading-relaxed bg-white">
+                        大歓迎です。30分の無料オンライン相談では、強引な営業は一切行いません。「他社はどのようにAIを使っているのか？」「自社で使えるとしたらどこか？」といった情報収集の場としてご活用ください。
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                    <button class="w-full flex justify-between items-center text-left p-6 gap-4 hover:bg-gray-50 transition-colors focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="font-bold text-gray-800">Q. 契約後のプラン変更は可能ですか？</span>
+                        <div class="bg-gray-100 p-1.5 rounded-full shrink-0"><i class="ph-bold ph-caret-down text-gray-600"></i></div>
+                    </button>
+                    <div class="accordion-content px-6 text-gray-600 leading-relaxed bg-white">
+                        はい、可能です。最初は「ENTRYプラン」で情報収集から始め、具体的なツール導入のフェーズに入ったタイミングで「STANDARDプラン」へアップグレードされる企業様が多いです。
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+                    <button class="w-full flex justify-between items-center text-left p-6 gap-4 hover:bg-gray-50 transition-colors focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+                        <span class="font-bold text-gray-800">Q. 情報漏洩など、セキュリティのリスクが心配です。</span>
+                        <div class="bg-gray-100 p-1.5 rounded-full shrink-0"><i class="ph-bold ph-caret-down text-gray-600"></i></div>
+                    </button>
+                    <div class="accordion-content px-6 text-gray-600 leading-relaxed bg-white">
+                        無料の一般向け生成AIを利用する場合、入力データが学習に使われるリスクがあります。SANBO AIでは、企業向けの安全な環境の設定方法をお伝えするか、PREMIUMプランにて入力データが学習されない自社専用のセキュアな環境を構築します。
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FINAL CTA / CONTACT -->
+    <section id="contact" class="bg-navy-900 border-t border-navy-800 py-32 relative overflow-hidden isolate text-center">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-brandOrange/10 to-transparent z-0"></div>
+        <div class="blob-bg w-[600px] h-[600px] bg-brandOrange/5 rounded-full top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="font-heading font-black text-4xl md:text-5xl lg:text-6xl text-white mb-6 tracking-tight leading-tight fade-up-element">
+                まずは、30分だけ<br class="md:hidden">お話ししませんか？
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 fade-up-element delay-100">
+                専門用語は使いません。強引な営業も一切ありません。<br>御社の現在の課題をお聞かせください。
+            </p>
+            
+            <div class="fade-up-element delay-200">
+                <a href="mailto:y-hashimoto@vaizo.jp" class="group inline-flex flex-col items-center justify-center bg-brandOrange hover:bg-brandOrange-hover text-white py-5 px-10 rounded-full overflow-hidden transition-all duration-300 shadow-[0_15px_40px_rgba(230,126,34,0.4)] hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(230,126,34,0.6)] w-full md:w-auto relative">
+                    <span class="flex items-center gap-3 text-2xl font-bold font-heading mb-1 relative z-10">
+                        <i class="ph-bold ph-envelope-simple text-3xl"></i>
+                        無料で相談メールを送る
+                    </span>
+                    <span class="text-sm font-medium opacity-90 relative z-10">y-hashimoto@vaizo.jp</span>
+                    <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 border-t border-white/10 pt-16 pb-24 md:pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+                
+                <div class="text-center md:text-left">
+                    <div class="font-heading font-bold text-2xl text-white tracking-widest mb-4 flex items-center justify-center md:justify-start gap-2">
+                        <div class="w-6 h-6 rounded bg-brandOrange flex items-center justify-center font-heading font-bold text-white text-xs shadow-lg">S</div>
+                        SANBO AI
+                    </div>
+                    <p class="text-gray-400 text-sm mb-2">運営会社：株式会社VAIZO</p>
+                    <p class="text-gray-500 text-xs">〒980-0021<br>宮城県仙台市青葉区中央4丁目1-26<br>レインボービル503</p>
+                </div>
+                
+                <div class="flex gap-4">
+                    <a href="mailto:y-hashimoto@vaizo.jp" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-brandOrange hover:border-brandOrange transition-colors">
+                        <i class="ph-fill ph-envelope-simple text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-white/5 text-center">
+                <p class="text-gray-600 text-xs">&copy; 2026 VAIZO Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY BOTTOM CTA (Mobile mostly, visible after scroll) -->
+    <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-md border-t border-gray-200 z-50 transform translate-y-full transition-transform duration-500 ease-in-out flex justify-center items-center shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.1)] md:hidden">
+        <a href="#contact" class="flex-grow max-w-sm flex items-center justify-center gap-2 bg-brandOrange text-white text-base font-bold py-3 px-6 rounded-full shadow-lg">
+            <i class="ph-bold ph-envelope-simple text-lg"></i> 無料で相談する（30分）
+        </a>
+    </div>
+
+    <!-- Shimmer Keyframe -->
+    <style>
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+    </style>
+
+    <!-- Interactivity Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll Animation Observer (Fade up)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up-element').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Sticky Header & Bottom CTA Logic
+            const header = document.getElementById('global-nav');
+            const stickyCta = document.getElementById('sticky-cta');
+            
+            window.addEventListener('scroll', () => {
+                const scrollPos = window.scrollY;
+                
+                // Header Glassmorphism toggle
+                if (scrollPos > 50) {
+                    header.classList.add('glass-dark', 'shadow-lg');
+                    header.classList.remove('py-4');
+                    header.classList.add('py-2');
+                } else {
+                    header.classList.remove('glass-dark', 'shadow-lg');
+                    header.classList.add('py-4');
+                    header.classList.remove('py-2');
+                }
+
+                // Bottom CTA Reveal (show after 500px scroll)
+                if (scrollPos > 500) {
+                    stickyCta.classList.remove('translate-y-full');
+                } else {
+                    stickyCta.classList.add('translate-y-full');
+                }
+            });
+            
+            // Trigger scroll check on load just in case
+            window.dispatchEvent(new Event('scroll'));
+        });
+    </script>
+</body>
+</html>
