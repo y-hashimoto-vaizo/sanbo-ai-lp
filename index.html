@@ -346,6 +346,246 @@ img { max-width: 100%; }
 .trust-photo img { width: 100%; height: 100%; object-fit: cover; }
 .trust-info { flex: 1; min-width: 240px; }
 
+/* ── Promo bar (top) ── */
+.promo-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1100;
+  background: #e67e22; color: #fff; text-align: center;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
+  padding: 8px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.promo-bar a { color: #fff; text-decoration: underline; margin-left: 8px; }
+body.has-promo .header { top: 36px; }
+body.has-promo { padding-top: 36px; }
+
+/* ── Hero Mini CTA Group ── */
+.hero-cta-soft {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: #fff;
+  color: #111 !important;
+  border: 1px solid #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: all 0.2s;
+}
+.hero-cta-soft:hover { background: #f0f0f0; }
+.mini-cta-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+  max-width: 720px;
+}
+.mini-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 13px;
+  transition: all 0.2s;
+  text-align: left;
+}
+.mini-cta:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); }
+.mini-cta-icon { font-size: 20px; }
+.mini-cta-title { font-size: 13px; font-weight: 700; letter-spacing: 0.02em; }
+.mini-cta-sub { font-size: 11px; color: #aaa; }
+
+/* ── AI Employee Catalog ── */
+.ai-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.ai-card {
+  padding: 28px 24px;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.ai-card:hover { border-color: #111; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.ai-card-icon { font-size: 36px; margin-bottom: 12px; }
+.ai-card-title { font-size: 17px; font-weight: 800; margin-bottom: 14px; letter-spacing: -0.01em; }
+.ai-card-jobs { list-style: none; padding: 0; margin: 0 0 16px 0; flex: 1; }
+.ai-card-jobs li {
+  font-size: 13px; color: #555; padding: 6px 0; line-height: 1.6;
+  border-bottom: 1px dashed #eee;
+}
+.ai-card-jobs li:last-child { border-bottom: none; }
+.ai-card-jobs li::before { content: '・'; color: #999; margin-right: 4px; }
+.ai-card-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #e67e22;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  align-self: flex-start;
+  border-radius: 2px;
+}
+
+/* ── Before / After ── */
+.ba-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.ba-card {
+  padding: 32px 26px;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.ba-card-task {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eee;
+}
+.ba-row { display: flex; align-items: baseline; gap: 10px; }
+.ba-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #999; min-width: 52px; }
+.ba-before-val { font-size: 20px; font-weight: 800; color: #999; text-decoration: line-through; }
+.ba-after-val { font-size: 28px; font-weight: 900; color: #e67e22; letter-spacing: -0.02em; }
+.ba-savings { font-size: 13px; color: #666; font-weight: 600; }
+.ba-used {
+  font-size: 12px;
+  color: #555;
+  padding-top: 12px;
+  border-top: 1px dashed #e0e0e0;
+  line-height: 1.6;
+}
+.ba-used strong { color: #e67e22; font-weight: 700; }
+.ba-note {
+  font-size: 12px;
+  color: #777;
+  line-height: 1.6;
+  background: #f5f5f5;
+  padding: 10px 12px;
+  border-left: 3px solid #e67e22;
+}
+
+/* ── Total pricing badge ── */
+.total-pricing {
+  margin: 16px 0 4px;
+  padding: 12px 14px;
+  background: #fff7ee;
+  border: 1px solid #e67e22;
+  border-radius: 6px;
+  text-align: center;
+}
+.pricing-card-pop .total-pricing {
+  background: rgba(230,126,34,0.12);
+  border-color: #e67e22;
+}
+.total-pricing-label {
+  font-size: 11px;
+  color: #e67e22;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+.total-pricing-val {
+  font-size: 20px;
+  font-weight: 900;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+.pricing-card-pop .total-pricing-val { color: #fff; }
+.total-pricing-calc {
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* ── Support grid ── */
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.support-card {
+  padding: 28px;
+  border: 1px solid #eee;
+  background: #fff;
+}
+.support-card h3 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e67e22;
+  display: inline-block;
+}
+.support-card p, .support-card li {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+}
+.support-card ul { list-style: none; padding: 0; }
+.support-card li { padding: 4px 0; }
+.support-card li strong { color: #111; }
+
+/* ── Security details grid ── */
+.sec-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+.sec-detail-item {
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #1a1a1a;
+}
+.sec-detail-item .sec-key {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #e67e22;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.sec-detail-item .sec-val {
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.7;
+}
+
+/* ── Company info ── */
+.company-info {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 36px;
+  border: 1px solid #eee;
+  background: #fafafa;
+}
+.company-info dl { display: grid; grid-template-columns: 160px 1fr; gap: 0; }
+.company-info dt, .company-info dd {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 14px;
+}
+.company-info dt {
+  font-weight: 700;
+  color: #666;
+  letter-spacing: 0.05em;
+  background: #fff;
+}
+.company-info dd { color: #222; line-height: 1.7; }
+.company-info a { color: #e67e22; font-weight: 700; text-decoration: underline; }
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .hero { padding: 140px 0 80px; }
@@ -398,10 +638,27 @@ img { max-width: 100%; }
   .menu-toggle { display: block; }
   .btn-group { flex-direction: column; }
   .btn { width: 100%; text-align: center; }
+  .ai-cat-grid { grid-template-columns: 1fr; }
+  .ba-grid { grid-template-columns: 1fr; }
+  .support-grid { grid-template-columns: 1fr; }
+  .sec-detail-grid { grid-template-columns: 1fr; }
+  .mini-cta-row { grid-template-columns: 1fr; max-width: none; }
+  .company-info { padding: 24px 16px; }
+  .company-info dl { grid-template-columns: 1fr; }
+  .company-info dt { background: #f0f0f0; }
+  .company-info dt, .company-info dd { padding: 10px 12px; }
+  .promo-bar { font-size: 11px; padding: 6px 12px; }
+  body.has-promo .header { top: 32px; }
+  body.has-promo { padding-top: 32px; }
 }
 </style>
 </head>
-<body>
+<body class="has-promo">
+
+<!-- PROMO BAR -->
+<div class="promo-bar">
+  いま<strong>1万円分の無料トークン</strong>を配布中（クレカ不要・メール登録だけ）<a href="#contact">受け取る →</a>
+</div>
 
 <!-- HEADER -->
 <header class="header" id="header">
@@ -411,7 +668,8 @@ img { max-width: 100%; }
     <nav class="nav" id="nav">
       <a href="#problem">課題</a>
       <a href="#service">サービス</a>
-      <a href="#demo">使い方</a>
+      <a href="#ai-catalog">AI社員</a>
+      <a href="#before-after">効果</a>
       <a href="#pricing">料金</a>
       <a href="#faq">FAQ</a>
       <a href="#contact" class="btn btn-primary btn-sm">無料で相談してみる</a>
@@ -433,10 +691,29 @@ img { max-width: 100%; }
       貴社の参謀AIが、守備範囲を広げながら経営を支えます。
     </p>
     <div class="btn-group">
-      <a href="#contact" class="btn btn-cta-orange">30分の無料相談で、貴社のAI活用プランが分かる</a>
-      <a href="#" class="btn btn-white-outline">3分でわかるサービス資料</a>
+      <a href="#contact" class="btn btn-cta-orange">無料相談・オンラインデモ予約（30分）</a>
+      <a href="#contact" class="hero-cta-soft">1万円分の無料トークンを受け取る</a>
     </div>
-    <div class="hero-sub">登録時1万円分の無料トークン進呈 ｜ ステップメール配信（10日間） ｜ 勝手にプランアップしない承認制</div>
+    <div class="hero-sub">クレカ不要 ｜ メール登録のみ ｜ ステップメール10日間 ｜ 勝手にプランアップしない承認制</div>
+
+    <!-- Mini CTA row: 軽い選択肢 -->
+    <div class="mini-cta-row">
+      <a href="#contact" class="mini-cta">
+        <span class="mini-cta-icon">📧</span>
+        <span class="mini-cta-title">メールで試す</span>
+        <span class="mini-cta-sub">1万円分トークン受け取り</span>
+      </a>
+      <a href="#contact" class="mini-cta">
+        <span class="mini-cta-icon">📄</span>
+        <span class="mini-cta-title">サービス紹介資料DL</span>
+        <span class="mini-cta-sub">PDF・3分で読める</span>
+      </a>
+      <a href="#contact" class="mini-cta">
+        <span class="mini-cta-icon">🎬</span>
+        <span class="mini-cta-title">3分動画を見る</span>
+        <span class="mini-cta-sub">YouTube（準備中）</span>
+      </a>
+    </div>
     <div class="hero-stats">
       <div>
         <div class="hero-stat-num">月5万〜</div>
@@ -694,6 +971,233 @@ img { max-width: 100%; }
   </div>
 </section>
 
+<!-- AI EMPLOYEE CATALOG -->
+<section class="section section-gray" id="ai-catalog">
+  <div class="container">
+    <p class="section-label text-center">AI EMPLOYEE CATALOG</p>
+    <h2 class="section-title text-center">今日から使えるAI社員たち</h2>
+    <p class="section-desc text-center">「AIって結局、何をしてくれるの？」——10体の専門AI社員で、具体的にお見せします。<br>どのAI社員も、貴社の文脈を学びながら毎日成長します。</p>
+
+    <div class="ai-cat-grid" style="margin-top:48px;">
+
+      <div class="ai-card">
+        <div class="ai-card-icon">🧠</div>
+        <div class="ai-card-title">経営参謀AI</div>
+        <ul class="ai-card-jobs">
+          <li>月次業績分析とサマリー作成</li>
+          <li>中期戦略・方針のブレスト相手</li>
+          <li>重要意思決定の壁打ち</li>
+        </ul>
+        <span class="ai-card-badge">経営者全員 ／ 5名〜</span>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-card-icon">👤</div>
+        <div class="ai-card-title">採用AI</div>
+        <ul class="ai-card-jobs">
+          <li>求人票・募集要項の作成</li>
+          <li>スカウトメール文面生成</li>
+          <li>応募者スクリーニング補助</li>
+        </ul>
+        <span class="ai-card-badge">採用強化期 ／ 10名〜</span>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-card-icon">📣</div>
+        <div class="ai-card-title">広報AI</div>
+        <ul class="ai-card-jobs">
+          <li>プレスリリース原稿作成</li>
+          <li>SNS投稿文・note記事生成</li>
+          <li>メディア戦略・発信計画立案</li>
+        </ul>
+        <span class="ai-card-badge">B2B・B2C問わず ／ 5名〜</span>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-card-icon">📊</div>
+        <div class="ai-card-title">営業AI</div>
+        <ul class="ai-card-jobs">
+          <li>営業メール・フォロー文生成</li>
+          <li>提案書・見積書ドラフト作成</li>
+          <li>見込み顧客リスト作成</li>
+        </ul>
+        <span class="ai-card-badge">営業組織あり ／ 10名〜</span>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-card-icon">💰</div>
+        <div class="ai-card-title">経理AI</div>
+        <ul class="ai-card-jobs">
+          <li>請求書発行・処理の自動化</li>
+          <li>経費精算チェック</li>
+          <li>月次試算表サマリー作成</li>
+        </ul>
+        <span class="ai-card-badge">経理1名体制 ／ 5名〜</span>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-card-icon">📝</div>
+        <div class="ai-card-title">議事録AI</div>
+        <ul class="ai-card-jobs">
+          <li>会議録音→要約→ToDo抽出</li>
+          <li>報告書・議事録の自動生成</li>
+          <li>決定事項のナレッジ蓄積</li>
+        </ul>
+        <span class="ai-card-badge">会議の多い会社 ／ 5名〜</span>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-card-icon">📧</div>
+        <div class="ai-card-title">CS応対AI</div>
+        <ul class="ai-card-jobs">
+          <li>問合せの自動分類・振り分け</li>
+          <li>定型返信文の自動生成</li>
+          <li>FAQの整備と更新</li>
+        </ul>
+        <span class="ai-card-badge">問合せ多い業種 ／ 10名〜</span>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-card-icon">📈</div>
+        <div class="ai-card-title">マーケAI</div>
+        <ul class="ai-card-jobs">
+          <li>広告文・LPコピー生成</li>
+          <li>コンテンツ企画・キーワード設計</li>
+          <li>SEO改善提案</li>
+        </ul>
+        <span class="ai-card-badge">集客強化フェーズ ／ 5名〜</span>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-card-icon">💼</div>
+        <div class="ai-card-title">人事AI</div>
+        <ul class="ai-card-jobs">
+          <li>評価シート整理・フィードバック補助</li>
+          <li>研修企画・カリキュラム設計</li>
+          <li>労務相談の一次回答</li>
+        </ul>
+        <span class="ai-card-badge">組織作り強化 ／ 20名〜</span>
+      </div>
+
+      <div class="ai-card">
+        <div class="ai-card-icon">🔍</div>
+        <div class="ai-card-title">リサーチAI</div>
+        <ul class="ai-card-jobs">
+          <li>市場調査・業界動向サマリー</li>
+          <li>競合分析レポート</li>
+          <li>業界レポート・論文要約</li>
+        </ul>
+        <span class="ai-card-badge">戦略立案期 ／ 5名〜</span>
+      </div>
+
+    </div>
+
+    <p class="text-center" style="margin-top:40px; font-size:14px; color:#666;">
+      ※ これらのAI社員は貴社の業務に合わせてカスタマイズされ、使うほど賢くなります。<br>
+      <strong style="color:#111;">追加AI社員は+3万円/体（スタンダード）</strong>から。プロ以上ではカスタムAIも毎月構築します。
+    </p>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="section" id="before-after">
+  <div class="container">
+    <p class="section-label text-center">BEFORE / AFTER</p>
+    <h2 class="section-title text-center">実際にどれくらい変わる？</h2>
+    <p class="section-desc text-center">「時短しました」ではなく、具体的な数字で。<br>VAIZO自身の運用データと、モデルケースに基づく目安です。</p>
+
+    <div class="ba-grid" style="margin-top:48px;">
+
+      <div class="ba-card">
+        <div class="ba-card-task">提案書の作成</div>
+        <div class="ba-row">
+          <span class="ba-label">BEFORE</span>
+          <span class="ba-before-val">3日</span>
+        </div>
+        <div class="ba-row">
+          <span class="ba-label">AFTER</span>
+          <span class="ba-after-val">3時間</span>
+        </div>
+        <div class="ba-savings">約90%短縮（実働日数比）</div>
+        <div class="ba-used">使用：<strong>営業AI</strong> ＋ 経営参謀AI</div>
+        <div class="ba-note">顧客情報・過去提案・競合比較をAIが下準備。担当者は骨子レビューと最終調整に集中。</div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-card-task">月次経営会議の資料準備</div>
+        <div class="ba-row">
+          <span class="ba-label">BEFORE</span>
+          <span class="ba-before-val">2日</span>
+        </div>
+        <div class="ba-row">
+          <span class="ba-label">AFTER</span>
+          <span class="ba-after-val">2時間</span>
+        </div>
+        <div class="ba-savings">約94%短縮</div>
+        <div class="ba-used">使用：<strong>経営参謀AI</strong> ＋ 議事録AI</div>
+        <div class="ba-note">前月議事録・数値・KPIを自動統合。社長は意思決定の論点整理だけに時間を使えます。</div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-card-task">採用スカウトメール100通</div>
+        <div class="ba-row">
+          <span class="ba-label">BEFORE</span>
+          <span class="ba-before-val">1日（8時間）</span>
+        </div>
+        <div class="ba-row">
+          <span class="ba-label">AFTER</span>
+          <span class="ba-after-val">30分</span>
+        </div>
+        <div class="ba-savings">約16倍速（送信単位）</div>
+        <div class="ba-used">使用：<strong>採用AI</strong> ＋ 広報AI</div>
+        <div class="ba-note">候補者ごとの経歴・志望傾向に合わせて個別文面を生成。テンプレ送信よりも返信率が上がります。</div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-card-task">請求書発行処理（月次）</div>
+        <div class="ba-row">
+          <span class="ba-label">BEFORE</span>
+          <span class="ba-before-val">月20時間</span>
+        </div>
+        <div class="ba-row">
+          <span class="ba-label">AFTER</span>
+          <span class="ba-after-val">月1時間</span>
+        </div>
+        <div class="ba-savings">約95%短縮</div>
+        <div class="ba-used">使用：<strong>経理AI</strong></div>
+        <div class="ba-note">契約データから請求書を自動生成、チェックリストで人間は最終承認のみ。経理1名体制でも安心。</div>
+      </div>
+
+      <div class="ba-card">
+        <div class="ba-card-task">競合リサーチレポート</div>
+        <div class="ba-row">
+          <span class="ba-label">BEFORE</span>
+          <span class="ba-before-val">1週間</span>
+        </div>
+        <div class="ba-row">
+          <span class="ba-label">AFTER</span>
+          <span class="ba-after-val">1日</span>
+        </div>
+        <div class="ba-savings">約86%短縮</div>
+        <div class="ba-used">使用：<strong>リサーチAI</strong> ＋ マーケAI</div>
+        <div class="ba-note">上場企業のIR・ニュース・SNSを横断リサーチ。戦略会議にそのまま出せる粒度で納品されます。</div>
+      </div>
+
+      <div class="ba-card" style="background:#111; color:#fff; border-color:#111; justify-content:center; align-items:flex-start;">
+        <div style="font-size:12px; letter-spacing:0.15em; color:#e67e22; font-weight:700;">TOTAL EFFECT</div>
+        <div style="font-size:28px; font-weight:900; line-height:1.3; letter-spacing:-0.02em;">合計で<br>月160時間超の創出</div>
+        <div style="font-size:13px; color:#aaa; line-height:1.7;">上記5業務を導入するだけで、社員1名分（週40時間×4週）の時間が生まれます。<br>社長や部長はもう、深夜の作業から解放されます。</div>
+        <a href="#contact" class="btn btn-cta-orange" style="margin-top:12px; width:100%; text-align:center;">無料相談で自社の試算を聞く</a>
+      </div>
+
+    </div>
+
+    <p class="text-center" style="margin-top:32px; font-size:12px; color:#888;">
+      ※ 上記はモデルケースであり、業種・業務内容・既存フローにより変動します。実際の試算は無料相談でお出しします。
+    </p>
+  </div>
+</section>
+
 <!-- FLOW -->
 <section class="section section-gray" id="flow">
   <div class="container">
@@ -752,6 +1256,11 @@ img { max-width: 100%; }
           <li>AI社員追加：+3万円/社員（従量）</li>
         </ul>
         <div class="pricing-contract">セットアップ料 10万円 ｜ 最低契約期間 3ヶ月</div>
+        <div class="total-pricing">
+          <div class="total-pricing-label">初回総額の目安</div>
+          <div class="total-pricing-val">25万円</div>
+          <div class="total-pricing-calc">セットアップ10万 + 月額5万×3ヶ月</div>
+        </div>
         <a href="#contact" class="btn btn-outline-orange btn-full" style="margin-top:20px;">無料で相談してみる</a>
       </div>
 
@@ -769,6 +1278,11 @@ img { max-width: 100%; }
           <li>チーム無制限</li>
         </ul>
         <div class="pricing-contract" style="color:#888;">セットアップ料 20万円 ｜ 最低契約期間 3ヶ月</div>
+        <div class="total-pricing">
+          <div class="total-pricing-label">初回総額の目安</div>
+          <div class="total-pricing-val">95万円</div>
+          <div class="total-pricing-calc">セットアップ20万 + 月額25万×3ヶ月</div>
+        </div>
         <a href="#contact" class="btn btn-cta-orange btn-full" style="margin-top:20px;">無料で相談してみる</a>
       </div>
 
@@ -786,6 +1300,11 @@ img { max-width: 100%; }
           <li>セキュリティ特化（SOC2等）</li>
         </ul>
         <div class="pricing-contract">セットアップ料 0円（サービス） ｜ 最低契約期間 3ヶ月</div>
+        <div class="total-pricing">
+          <div class="total-pricing-label">初回総額の目安</div>
+          <div class="total-pricing-val">150万円</div>
+          <div class="total-pricing-calc">セットアップ0円 + 月額50万×3ヶ月</div>
+        </div>
         <a href="#contact" class="btn btn-outline-orange btn-full" style="margin-top:20px;">無料で相談してみる</a>
       </div>
     </div>
@@ -1116,28 +1635,134 @@ img { max-width: 100%; }
         <p style="font-size:13px; color:#888; margin-top:16px; line-height:1.6;">国の行政システムからメガバンク、グローバル企業まで。最高レベルのセキュリティが求められる組織が採用しているインフラと同じ基盤で、お客様のデータをお預かりしています。</p>
       </div>
 
-      <div style="padding:32px; border:1px solid #333; border-radius:12px;">
-        <h3 style="font-size:18px; font-weight:800; margin-bottom:20px; color:#fff;">SANBO AIのセキュリティ対策</h3>
-        <div style="display:grid; gap:12px;">
-          <div style="display:flex; align-items:flex-start; gap:12px;">
-            <div style="color:#e67e22; font-size:18px; flex-shrink:0;">&#10003;</div>
-            <div><div style="font-size:14px; font-weight:700; color:#fff;">通信の暗号化</div><div style="font-size:13px; color:#888;">すべての通信はSSL/TLSで暗号化</div></div>
+      <div id="security-details" style="padding:32px; border:1px solid #333; border-radius:12px;">
+        <h3 style="font-size:18px; font-weight:800; margin-bottom:8px; color:#fff;">SANBO AIのセキュリティ詳細</h3>
+        <p style="font-size:13px; color:#888; margin-bottom:4px;">中小企業にも、大企業と同水準の運用体制を。</p>
+
+        <div class="sec-detail-grid">
+          <div class="sec-detail-item">
+            <div class="sec-key">DATA LOCATION</div>
+            <div class="sec-val">日本国内（AWS東京リージョン）で全データを保管</div>
           </div>
-          <div style="display:flex; align-items:flex-start; gap:12px;">
-            <div style="color:#e67e22; font-size:18px; flex-shrink:0;">&#10003;</div>
-            <div><div style="font-size:14px; font-weight:700; color:#fff;">データ分離</div><div style="font-size:13px; color:#888;">エンタープライズプランでは独自サーバー環境＋企業ごとに独立した設計</div></div>
+          <div class="sec-detail-item">
+            <div class="sec-key">ENCRYPTION IN TRANSIT</div>
+            <div class="sec-val">通信暗号化：TLS 1.3（最新仕様）</div>
           </div>
-          <div style="display:flex; align-items:flex-start; gap:12px;">
-            <div style="color:#e67e22; font-size:18px; flex-shrink:0;">&#10003;</div>
-            <div><div style="font-size:14px; font-weight:700; color:#fff;">秘密保持契約（NDA）</div><div style="font-size:13px; color:#888;">機密情報の取り扱いはNDAを締結して保護</div></div>
+          <div class="sec-detail-item">
+            <div class="sec-key">ENCRYPTION AT REST</div>
+            <div class="sec-val">保存データ暗号化：AES-256</div>
           </div>
-          <div style="display:flex; align-items:flex-start; gap:12px;">
-            <div style="color:#e67e22; font-size:18px; flex-shrink:0;">&#10003;</div>
-            <div><div style="font-size:14px; font-weight:700; color:#fff;">アクセス制御</div><div style="font-size:13px; color:#888;">権限管理により、許可されたユーザーのみがデータにアクセス</div></div>
+          <div class="sec-detail-item">
+            <div class="sec-key">ACCESS CONTROL</div>
+            <div class="sec-val">役割ベースアクセス制御（RBAC）＋ 多要素認証（MFA）</div>
           </div>
+          <div class="sec-detail-item">
+            <div class="sec-key">BACKUP</div>
+            <div class="sec-val">日次自動バックアップ／30日間保持</div>
+          </div>
+          <div class="sec-detail-item">
+            <div class="sec-key">DATA PORTABILITY</div>
+            <div class="sec-val">解約時は全データJSONエクスポート可能／90日後に完全削除</div>
+          </div>
+        </div>
+
+        <div style="margin-top:24px; padding:20px; background:#0a0a0a; border:1px dashed #e67e22; border-radius:8px;">
+          <div style="font-size:12px; letter-spacing:0.1em; color:#e67e22; font-weight:700; margin-bottom:8px;">FOR ENTERPRISE PLAN</div>
+          <div style="font-size:14px; color:#fff; line-height:1.8;">独自サーバー環境（マルチテナント非共有）／SOC2 Type II 取得予定（2027年）／詳細監査ログの提供／専任セキュリティ担当のアサイン</div>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="section" id="support">
+  <div class="container">
+    <p class="section-label text-center">SUPPORT</p>
+    <h2 class="section-title text-center">導入後も、ひとりにしません。</h2>
+    <p class="section-desc text-center">「使いこなせるか不安」をなくすのが、SANBO AIの仕事です。<br>平均返信2時間以内、プロ以上は月次MTG、エンプラは電話即時対応。</p>
+
+    <div class="support-grid" style="max-width:960px; margin:48px auto 0;">
+
+      <div class="support-card">
+        <h3>営業時間・レスポンス</h3>
+        <ul>
+          <li><strong>営業時間：</strong>平日 9:00 - 18:00（土日祝休）</li>
+          <li><strong>平均返信時間：</strong>営業時間内 2時間以内</li>
+          <li><strong>障害対応：</strong>営業時間内は1時間以内に初動／土日祝は翌営業日対応</li>
+        </ul>
+      </div>
+
+      <div class="support-card">
+        <h3>プラン別サポートチャネル</h3>
+        <ul>
+          <li><strong>スタンダード：</strong>メール・チャット（即日返信）</li>
+          <li><strong>プロフェッショナル：</strong>上記＋月次オンラインMTG</li>
+          <li><strong>エンタープライズ：</strong>上記＋電話即時対応</li>
+        </ul>
+      </div>
+
+      <div class="support-card">
+        <h3>定着を助ける伴走</h3>
+        <ul>
+          <li>プロ以上は月次業務棚卸しコンサル付き</li>
+          <li>従業員向けAI活用勉強会（月1回・プロ以上）</li>
+          <li>つまずき検知ダッシュボードで未活用社員を早期発見</li>
+        </ul>
+      </div>
+
+      <div class="support-card">
+        <h3>万が一への備え</h3>
+        <ul>
+          <li>サービス停止時：全データのエクスポート機会を保証</li>
+          <li>解約時：JSONでの一括エクスポート・90日後完全削除</li>
+          <li>事業継続性：AWS東京リージョンのマルチAZ冗長構成</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY INFO -->
+<section class="section section-gray" id="company-info">
+  <div class="container">
+    <p class="section-label text-center">COMPANY</p>
+    <h2 class="section-title text-center">運営会社</h2>
+    <p class="section-desc text-center">SANBO AIは、株式会社VAIZOが開発・運営しています。</p>
+
+    <div class="company-info">
+      <dl>
+        <dt>会社名</dt>
+        <dd>株式会社VAIZO（VAIZO Inc.）</dd>
+
+        <dt>代表取締役CEO</dt>
+        <dd>橋本 友太郎</dd>
+
+        <dt>Co-CTO</dt>
+        <dd>櫻井 理也</dd>
+
+        <dt>本社所在地</dt>
+        <dd>宮城県仙台市青葉区中央4丁目1-26 レインボービル503</dd>
+
+        <dt>設立</dt>
+        <dd>2026年</dd>
+
+        <dt>事業内容</dt>
+        <dd>
+          AI導入支援サービス「SANBO AI」／<br>
+          AI Web制作事業「EnterWebAI」／<br>
+          マイクロM&A事業／<br>
+          技術発信「ClaudeWorks」
+        </dd>
+
+        <dt>Web</dt>
+        <dd><a href="https://vaizo.jp" target="_blank" rel="noopener">https://vaizo.jp</a></dd>
+
+        <dt>お問合せ</dt>
+        <dd>contact@vaizo.jp</dd>
+      </dl>
     </div>
   </div>
 </section>
@@ -1233,13 +1858,16 @@ img { max-width: 100%; }
       <div>
         <div style="font-size:12px; font-weight:700; letter-spacing:0.15em; color:#666; margin-bottom:16px;">会社情報</div>
         <ul style="list-style:none;">
-          <li style="margin-bottom:10px;"><a href="https://vaizo.jp/about.html" style="font-size:13px; color:#999;">会社概要</a></li>
+          <li style="margin-bottom:10px;"><a href="#company-info" style="font-size:13px; color:#999;">運営会社</a></li>
+          <li style="margin-bottom:10px;"><a href="https://vaizo.jp" target="_blank" rel="noopener" style="font-size:13px; color:#999;">VAIZO公式サイト</a></li>
           <li style="margin-bottom:10px;"><a href="https://vaizo.jp/news/" style="font-size:13px; color:#999;">お知らせ</a></li>
         </ul>
       </div>
       <div>
         <div style="font-size:12px; font-weight:700; letter-spacing:0.15em; color:#666; margin-bottom:16px;">サポート</div>
         <ul style="list-style:none;">
+          <li style="margin-bottom:10px;"><a href="#support" style="font-size:13px; color:#999;">サポート体制</a></li>
+          <li style="margin-bottom:10px;"><a href="#security-details" style="font-size:13px; color:#999;">セキュリティ</a></li>
           <li style="margin-bottom:10px;"><a href="#contact" style="font-size:13px; color:#999;">お問い合わせ</a></li>
           <li style="margin-bottom:10px;"><a href="https://vaizo.jp/privacy.html" style="font-size:13px; color:#999;">プライバシーポリシー</a></li>
           <li style="margin-bottom:10px;"><a href="https://vaizo.jp/legal.html" style="font-size:13px; color:#999;">特定商取引法表記</a></li>
@@ -1248,7 +1876,7 @@ img { max-width: 100%; }
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 VAIZO Inc. All rights reserved.</span>
-      <span>info@vaizo.jp</span>
+      <span>contact@vaizo.jp ／ <a href="https://vaizo.jp" target="_blank" rel="noopener" style="color:#e67e22;">vaizo.jp</a></span>
     </div>
   </div>
 </footer>
